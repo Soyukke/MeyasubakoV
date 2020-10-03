@@ -1,0 +1,33 @@
+<div class="container">
+    <!-- コピー先 -->
+    <div class="left">
+        <h2>form list</h2>
+        <div
+        cdkDropList
+        #list2="cdkDropList"
+        [cdkDropListData]="components"
+        [cdkDropListConnectedTo]="[list1]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <!-- <div class="example-box" *ngFor="let item of components" cdkDrag>{{item}}</div> -->
+        <div cdkDrag *ngFor="let item of components">
+          <!-- {{item}} -->
+          <app-inputform></app-inputform>
+        </div>
+      </div>
+    </div>
+
+    <!-- コピー元 -->
+    <div class="right">
+        <h2>component list</h2>
+        <div
+        cdkDropList
+        #list1="cdkDropList"
+        [cdkDropListData]="componentlist"
+        [cdkDropListConnectedTo]="[list2]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of componentlist" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+</div>
