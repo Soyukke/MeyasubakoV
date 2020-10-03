@@ -5,14 +5,21 @@
         <div
         cdkDropList
         #list2="cdkDropList"
-        [cdkDropListData]="components"
+        [cdkDropListData]="icomps"
         [cdkDropListConnectedTo]="[list1]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
         <!-- <div class="example-box" *ngFor="let item of components" cdkDrag>{{item}}</div> -->
-        <div cdkDrag *ngFor="let item of components">
-          <!-- {{item}} -->
-          <app-inputform></app-inputform>
+        <div cdkDrag *ngFor="let item of icomps">
+          <ng-container *ngIf="item.ctype == 1">
+            <app-inputform></app-inputform>
+          </ng-container>
+          <ng-container *ngIf="item.ctype == 2">
+            <app-checkbox [isCheck]="item.isCheck"></app-checkbox>
+          </ng-container>
+          <ng-container *ngIf="item.ctype == 3">
+            <app-selectlist></app-selectlist>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -27,7 +34,17 @@
         [cdkDropListConnectedTo]="[list2]"
         class="example-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of componentlist" cdkDrag>{{item}}</div>
+        <div cdkDrag *ngFor="let item of componentlist">
+          <ng-container *ngIf="item == '1'">
+            <app-inputform></app-inputform>
+          </ng-container>
+          <ng-container *ngIf="item == '2'">
+            <app-checkbox></app-checkbox>
+          </ng-container>
+          <ng-container *ngIf="item == '3'">
+            <app-selectlist></app-selectlist>
+          </ng-container>
+        </div>
       </div>
     </div>
 </div>

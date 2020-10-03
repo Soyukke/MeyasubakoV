@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MeyasubakoV';
   componentList = [
-    `<div>hoge</div>`,
-    'b',
-    'c'
+    '1',
+    '2',
+    '3'
   ];
   constructor() {
   }

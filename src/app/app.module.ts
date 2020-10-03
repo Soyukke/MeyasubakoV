@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CopycomponentComponent } from './copycomponent/copycomponent.component';
-import { DragDropModule } from '@angular/cdk/drag-drop'
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop'
     InputformComponent,
     CheckboxComponent,
     SelectlistComponent,
-    CopycomponentComponent
+    CopycomponentComponent,
   ],
   imports: [
     BrowserModule,
