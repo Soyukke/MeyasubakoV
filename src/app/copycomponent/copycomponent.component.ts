@@ -13,10 +13,12 @@ class ComponentItem {
   index : number;
   ctype : number;
   isCheck : boolean;
+  candidates : string[];
   constructor(index:number, ctype:number, isCheck:boolean) {
     this.index = index;
     this.ctype = ctype;
     this.isCheck = isCheck;
+    this.candidates = ['りんご', 'バナナ', 'スイカ', 'ぶどう'];
   }
 }
 

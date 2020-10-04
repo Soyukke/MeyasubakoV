@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-selectlist',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./selectlist.component.css']
 })
 export class SelectlistComponent implements OnInit {
+  @Input() candidates;
 
   constructor() { }
 

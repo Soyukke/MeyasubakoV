@@ -11,6 +11,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CopycomponentComponent } from './copycomponent/copycomponent.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {MatSelectModule} from '@angular/material/select';
+import { QheaderComponent } from './qheader/qheader.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CheckboxComponent,
     SelectlistComponent,
     CopycomponentComponent,
+    QheaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,10 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     BrowserAnimationsModule,
     MatInputModule,
     MatCheckboxModule,
-    DragDropModule
+    DragDropModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

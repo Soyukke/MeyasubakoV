@@ -1,1 +1,11 @@
-<p>selectlist works!</p>
+<div>
+  <app-qheader></app-qheader>
+  <mat-form-field appearance="fill">
+    <mat-label>選択してください</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let candidate of candidates" [value]="candidate">
+        {{candidate}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -25,3 +25,12 @@
 .right {
   width: 20%;
 }
+
+.qbox {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 5%;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  /* border-style: solid; */
+}

@@ -10,7 +10,7 @@
         class="example-list"
         (cdkDropListDropped)="drop($event)">
         <!-- <div class="example-box" *ngFor="let item of components" cdkDrag>{{item}}</div> -->
-        <div cdkDrag *ngFor="let item of icomps">
+        <div class="qbox" cdkDrag *ngFor="let item of icomps">
           <ng-container *ngIf="item.ctype == 1">
             <app-inputform></app-inputform>
           </ng-container>
@@ -18,7 +18,7 @@
             <app-checkbox [isCheck]="item.isCheck"></app-checkbox>
           </ng-container>
           <ng-container *ngIf="item.ctype == 3">
-            <app-selectlist></app-selectlist>
+            <app-selectlist [candidates]="item.candidates"></app-selectlist>
           </ng-container>
         </div>
       </div>
