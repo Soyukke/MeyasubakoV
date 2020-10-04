@@ -1,0 +1,24 @@
+<!-- 選択リストテキスト入力フォーム -->
+<div>
+    <mat-form-field class="example-full-width">
+        <mat-label>選択リスト項目</mat-label>
+        <!-- 双方向binding -->
+        <input matInput placeholder="選択リストに追加する項目を入力してください" [(ngModel)]="value" value={{value}}>
+    </mat-form-field>
+  </div>  
+<!-- 追加ボタン -->
+<!-- valueをlistに追加する -->
+<section>
+    <div class="example-button-row">
+        <button mat-raised-button (click)="onClick()">追加</button>
+    </div>
+</section>
+
+<div class="addedList">
+<!-- 追加したtext -->
+<div *ngFor="let text of texts; let last = isLast">
+    <mat-card>{{text}}</mat-card>
+    <mat-divider *ngIf="!last" [vertical]="true"></mat-divider>
+</div>
+<!-- <div *ngFor="let text of texts ; let last as last">
+</div> -->

@@ -15,6 +15,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { QheaderComponent } from './qheader/qheader.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
+import { AddselectlistComponent } from './addselectlist/addselectlist.component';
+import { FormsModule } from '@angular/forms';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,7 @@ import {MatDividerModule} from '@angular/material/divider';
     SelectlistComponent,
     CopycomponentComponent,
     QheaderComponent,
+    AddselectlistComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,11 @@ import {MatDividerModule} from '@angular/material/divider';
     DragDropModule,
     MatSelectModule,
     MatButtonModule,
-    MatDividerModule
+    MatDividerModule,
+    FormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

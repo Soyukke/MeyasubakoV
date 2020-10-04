@@ -12,13 +12,17 @@
         <!-- <div class="example-box" *ngFor="let item of components" cdkDrag>{{item}}</div> -->
         <div class="qbox" cdkDrag *ngFor="let item of icomps">
           <ng-container *ngIf="item.ctype == 1">
+            <app-qheader [title]="item.title"></app-qheader>
             <app-inputform></app-inputform>
           </ng-container>
           <ng-container *ngIf="item.ctype == 2">
+            <app-qheader [title]="item.title"></app-qheader>
             <app-checkbox [isCheck]="item.isCheck"></app-checkbox>
           </ng-container>
           <ng-container *ngIf="item.ctype == 3">
-            <app-selectlist [candidates]="item.candidates"></app-selectlist>
+            <app-qheader [title]="item.title"></app-qheader>
+            <!-- <app-selectlist [candidates]="item.candidates"></app-selectlist> -->
+            <app-addselectlist [texts]="item.candidates"></app-addselectlist>
           </ng-container>
         </div>
       </div>
@@ -42,7 +46,7 @@
             <app-checkbox></app-checkbox>
           </ng-container>
           <ng-container *ngIf="item == '3'">
-            <app-selectlist></app-selectlist>
+            <app-addselectlist></app-addselectlist>
           </ng-container>
         </div>
       </div>
