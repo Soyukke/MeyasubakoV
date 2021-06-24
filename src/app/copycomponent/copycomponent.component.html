@@ -1,17 +1,11 @@
 <div class="container">
-    <!-- コピー先 -->
-    <div class="left">
-        <h2>フォーム作成イメージ</h2>
-        <div
-        cdkDropList
-        #list2="cdkDropList"
-        [cdkDropListData]="icomps"
-        [cdkDropListConnectedTo]="[list1]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <!-- <div class="example-box" *ngFor="let item of components" cdkDrag>{{item}}</div> -->
-        <div class="qbox" cdkDrag *ngFor="let item of icomps">
-          <mat-card>
+  <!-- コピー先 -->
+  <div class="left">
+    <h2>フォーム作成イメージ</h2>
+    <div cdkDropList #list2="cdkDropList" [cdkDropListData]="icomps" [cdkDropListConnectedTo]="[list1]"
+      class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="qbox" cdkDrag *ngFor="let item of icomps">
+        <mat-card>
           <ng-container *ngIf="item.ctype == 1">
             <app-qheader [title]="item.title"></app-qheader>
             <app-inputform></app-inputform>
@@ -26,33 +20,32 @@
             <app-addselectlist [texts]="item.candidates"></app-addselectlist>
           </ng-container>
         </mat-card>
-        </div>
       </div>
     </div>
+  </div>
 
-    <!-- コピー元 -->
-    <div class="right">
-        <h2>コンポーネントリスト</h2>
-        <div
-        cdkDropList
-        #list1="cdkDropList"
-        [cdkDropListData]="componentlist"
-        [cdkDropListConnectedTo]="[list2]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div cdkDrag *ngFor="let item of componentlist">
-          <ng-container *ngIf="item == '1'">
-            <mat-card>
-              <app-inputform></app-inputform>
-            </mat-card>
-          </ng-container>
-          <ng-container *ngIf="item == '2'">
+  <!-- コピー元 -->
+  <div class="right">
+    <h2>コンポーネントリスト</h2>
+    <div cdkDropList #list1="cdkDropList" [cdkDropListData]="componentlist" [cdkDropListConnectedTo]="[list2]"
+      class="example-list" (cdkDropListDropped)="drop($event)">
+      <div cdkDrag *ngFor="let item of componentlist">
+        <ng-container *ngIf="item == '1'">
+          <mat-card>
+            <app-inputform></app-inputform>
+          </mat-card>
+        </ng-container>
+        <ng-container *ngIf="item == '2'">
+          <mat-card>
             <app-checkbox></app-checkbox>
-          </ng-container>
-          <ng-container *ngIf="item == '3'">
+          </mat-card>
+        </ng-container>
+        <ng-container *ngIf="item == '3'">
+          <mat-card>
             <app-addselectlist></app-addselectlist>
-          </ng-container>
-        </div>
+          </mat-card>
+        </ng-container>
       </div>
     </div>
+  </div>
 </div>

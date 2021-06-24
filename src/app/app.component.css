@@ -5,3 +5,7 @@ app-inputform {
 .example-spacer {
   flex: 1 1 auto;
 }
+
+.save-section {
+  text-align:center;
+}
