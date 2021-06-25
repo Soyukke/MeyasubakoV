@@ -1,21 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem} from '@angular/cdk/drag-drop';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem, copyArrayItem } from '@angular/cdk/drag-drop';
 import { InputformComponent } from '../inputform/inputform.component';
 import { CheckboxComponent } from '../checkbox/checkbox.component';
 import { SelectlistComponent } from '../selectlist/selectlist.component';
 
-type FormComponent = InputformComponent|CheckboxComponent|SelectlistComponent
+type FormComponent = InputformComponent | CheckboxComponent | SelectlistComponent
 
-  /**
- * Component
+/**
+ * コンポーネントアイテムのメタ情報
+ * index: コンポーネントのindex
+ * ctype: コンポーネントのタイプ
+ * 各コンポーネントの持つ変数を保持しているが，別の方法が良い．
+ * 
  */
-class ComponentItem {
-  index : number;
-  ctype : number;
-  isCheck : boolean;
-  candidates : string[];
-  title : string;
-  constructor(index:number, ctype:number, isCheck:boolean) {
+export class ComponentItem {
+  index: number;
+  ctype: number;
+  isCheck: boolean;
+  candidates: string[];
+  title: string;
+  constructor(index: number, ctype: number, isCheck: boolean) {
     this.index = index;
     this.ctype = ctype;
     this.isCheck = isCheck;
@@ -32,8 +36,9 @@ class ComponentItem {
 
 export class CopycomponentComponent implements OnInit {
   // コンポーネントリスト
-  cs : FormComponent[];
-  icomps : ComponentItem[];
+  cs: FormComponent[];
+  // コンポーネントリスト
+  @Input() icomps: ComponentItem[];
   @Input() componentlist;
 
   components = [
@@ -44,16 +49,12 @@ export class CopycomponentComponent implements OnInit {
 
   constructor() {
     console.log("CopycomponentComponent", this.componentlist);
-    const c1 = new ComponentItem(1, 1, false);
-    const c2 = new ComponentItem(2, 2, false);
-    const c3 = new ComponentItem(3, 3, false);
-    this.icomps = [c1, c2, c3];
   }
 
   ngOnInit(): void {
   }
 
-  drop(event : any) {
+  drop(event: any) {
     if (event.previousContainer === event.container) {
       console.log('drop item to same list ', event.container.data);
       console.log('drop item to same list ', event.previousIndex);
@@ -64,13 +65,8 @@ export class CopycomponentComponent implements OnInit {
       console.log(event.container.data, event.currentIndex);
       const item = new ComponentItem(1, parseInt(event.previousContainer.data[event.previousIndex]), false);
       console.log(item);
+      // コンポーネントを追加する．
       this.icomps.push(item);
-      // copyArrayItem(
-      //   event.previousContainer.data,
-      //   event.container.data,
-      //   event.previousIndex,
-      //   event.currentIndex
-      // );
     }
   }
 }

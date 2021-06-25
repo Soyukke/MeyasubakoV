@@ -15,11 +15,11 @@
 </p>
 
 <!-- componentListをcopycomponentへ渡して設定する画面 -->
-<app-copycomponent [componentlist]="componentList"></app-copycomponent>
+<app-copycomponent [componentlist]="componentList" [icomps]="icomps"></app-copycomponent>
 
 <!-- フォーム保存 -->
 <section class="save-section">
   <div class="example-button-row">
-    <button mat-raised-button>保存</button>
+    <button mat-raised-button (click)="saveForm()">保存</button>
   </div>
 </section>
