@@ -1,6 +1,7 @@
 <div>
   <mat-form-field class="example-full-width">
     <mat-label>Q1. 設問ヘッダー</mat-label>
-    <textarea matInput placeholder="設問ヘッダー内容">{{title}}</textarea>
+    <textarea matInput placeholder="設問ヘッダー内容" [ngModel]='title'
+      (ngModelChange)='onChangeTitle($event)'>{{title}}</textarea>
   </mat-form-field>
 </div>

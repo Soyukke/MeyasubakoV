@@ -69,4 +69,8 @@ export class CopycomponentComponent implements OnInit {
       this.icomps.push(item);
     }
   }
+
+  myTrackBy(index, icomp) {
+    return icomp.index;
+  }
 }

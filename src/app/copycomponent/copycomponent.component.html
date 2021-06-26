@@ -8,15 +8,15 @@
         <mat-card>
           <ng-container *ngIf="item.ctype == 1">
             <!-- item.titleには変更が反映されない -->
-            <app-qheader [title]="item.title"></app-qheader>
+            <app-qheader [title]="item.title" (changeTitle)="item.title=$event"></app-qheader>
             <app-inputform></app-inputform>
           </ng-container>
           <ng-container *ngIf="item.ctype == 2">
-            <app-qheader [title]="item.title"></app-qheader>
+            <app-qheader [title]="item.title" (changeTitle)="item.title=$event"></app-qheader>
             <app-checkbox [isCheck]="item.isCheck"></app-checkbox>
           </ng-container>
           <ng-container *ngIf="item.ctype == 3">
-            <app-qheader [title]="item.title"></app-qheader>
+            <app-qheader [title]="item.title" (changeTitle)="item.title=$event"></app-qheader>
             <!-- <app-selectlist [candidates]="item.candidates"></app-selectlist> -->
             <app-addselectlist [texts]="item.candidates"></app-addselectlist>
           </ng-container>
