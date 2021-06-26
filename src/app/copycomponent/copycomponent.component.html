@@ -7,6 +7,7 @@
       <div class="qbox" cdkDrag *ngFor="let item of icomps">
         <mat-card>
           <ng-container *ngIf="item.ctype == 1">
+            <!-- item.titleには変更が反映されない -->
             <app-qheader [title]="item.title"></app-qheader>
             <app-inputform></app-inputform>
           </ng-container>

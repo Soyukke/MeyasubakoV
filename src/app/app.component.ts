@@ -17,6 +17,7 @@ export class AppComponent {
   icomps;
   constructor() {
     const c1 = new ComponentItem(1, 1, false);
+    c1.title = "タイトルのテスト";
     const c2 = new ComponentItem(2, 2, false);
     const c3 = new ComponentItem(3, 3, false);
     this.icomps = [c1, c2, c3];
@@ -28,5 +29,7 @@ export class AppComponent {
   saveForm() {
     console.log('保存押下');
     console.log(this.icomps);
+    const data = JSON.stringify(this.icomps)
+    window.alert(data);
   }
 }
